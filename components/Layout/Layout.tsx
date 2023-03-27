@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from "react";
 import Sidebar from "./Sidebar/Sidebar";
-import Navbar from "./Navbar";
+import Navbar from "./Navbar/Navbar";
 
 export interface Props {
   children: ReactNode;
@@ -8,11 +8,14 @@ export interface Props {
 
 const Layout: FC<Props> = ({ children }: Props) => {
   return (
-    <div className="flex h-screen">
-      <Sidebar />
-      <div>
-        <Navbar />
-        <main>{children}</main>
+    // This first div is use to set / unset the dark mode
+    <div className="dark">
+      <div className="flex h-screen bg-white-100 dark:bg-black-900">
+        <Sidebar />
+        <div className="w-full" style={{ marginLeft: "292px" }}>
+          <Navbar />
+          <main>{children}</main>
+        </div>
       </div>
     </div>
   );
