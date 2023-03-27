@@ -11,7 +11,7 @@ const SidebarLink: FC<Props> = ({ icon: Icon, text, link }) => {
   return (
     <Link
       href={link}
-      className="pl-4 py-2 text-black-900 hover:bg-red-500 hover:text-white-100 hover:rounded-xl flex items-center text-lg"
+      className="flex items-center text-lg pl-4 py-2 text-black-900 hover:bg-red-500 hover:text-white-100 hover:rounded-2xl dark:text-white-100"
     >
       <span>{Icon}</span>
       <span className="ml-4">{text}</span>
